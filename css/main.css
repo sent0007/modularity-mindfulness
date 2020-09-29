@@ -19,6 +19,10 @@ html {
 }
 
 body {
+  display: grid;
+  grid-template: 1fr;
+  grid-template-areas: "header" "article1" "article2" "article3";
+  gap: 1rem;
   margin: 0;
 }
 
@@ -32,6 +36,7 @@ header > p:nth-child(4) {
   border-top: .2rem solid #e2e2e2;
   max-width: 30rem;
   text-align: center;
+  grid-area: header;
   margin: 0 auto;
 }
 
@@ -40,6 +45,18 @@ header > p:last-child {
   max-width: 30rem;
   text-align: center;
   margin: 0 auto;
+}
+
+main:nth-child(1) {
+  grid-area: article1;
+}
+
+main:nth-child(2) {
+  grid-area: article2;
+}
+
+main:nth-child(3) {
+  grid-area: article3;
 }
 
 footer {
