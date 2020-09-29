@@ -18,12 +18,36 @@ html {
   font-style: normal;
 }
 
+h1 {
+  text-align: center;
+}
+
 body {
   display: grid;
   grid-template: 1fr;
-  grid-template-areas: "header" "article1" "article2" "article3";
+  grid-template-areas: "header" "article1" "article2" "article3" "footer";
   gap: 1rem;
   margin: 0;
+}
+
+body header {
+  grid-area: header;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-left: 0;
+}
+
+nav ul li {
+  padding: .5em;
+}
+
+nav ul li a{
+  color: #3783a3;
+  font-size: 1.25rem;
 }
 
 img {
@@ -36,7 +60,6 @@ header > p:nth-child(4) {
   border-top: .2rem solid #e2e2e2;
   max-width: 30rem;
   text-align: center;
-  grid-area: header;
   margin: 0 auto;
 }
 
@@ -47,18 +70,48 @@ header > p:last-child {
   margin: 0 auto;
 }
 
-main:nth-child(1) {
+main {
+  display: contents;
+}
+
+.div1 {
   grid-area: article1;
 }
 
-main:nth-child(2) {
+.div2 {
   grid-area: article2;
 }
 
-main:nth-child(3) {
+.div3 {
   grid-area: article3;
 }
 
 footer {
   border-top: .2rem solid #e2e2e2;
+  grid-area: footer;
+}
+
+@media only screen and (min-width: 38em) {
+
+  html {
+    font-size: 110%;
+    line-height: 1.4;
+  }
+
+  h1,
+  p {
+    margin: 0 0 1.4rem;
+  }
+
+  body {
+    display: grid;
+    grid-template: 1fr;
+    grid-template-areas:
+    "header header header"
+    "article1 article2 article3"
+    "footer footer footer";
+    gap: 1rem;
+    margin: 0;
+  }
+
 }
