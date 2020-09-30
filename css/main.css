@@ -20,12 +20,17 @@ html {
 
 h1 {
   text-align: center;
+  font-size: 1.5rem;
+}
+
+i {
+  font-style: normal;
 }
 
 body {
   display: grid;
-  grid-template: 1fr;
-  grid-template-areas: "header" "article1" "article2" "article3" "footer";
+  grid-template-columns: repeat(1fr);
+  grid-template-areas: "header" "card1" "card2" "card3" "footer";
   gap: 1rem;
   margin: 0;
 }
@@ -70,20 +75,24 @@ header > p:last-child {
   margin: 0 auto;
 }
 
+section {
+  display: contents;
+}
+
 main {
   display: contents;
 }
 
-.div1 {
-  grid-area: article1;
+.article1 {
+  grid-area: card1;
 }
 
-.div2 {
-  grid-area: article2;
+.article2 {
+  grid-area: card2;
 }
 
-.div3 {
-  grid-area: article3;
+.article3 {
+  grid-area: card3;
 }
 
 footer {
@@ -105,10 +114,11 @@ footer {
 
   body {
     display: grid;
-    grid-template: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
     "header header header"
-    "article1 article2 article3"
+    "card1 card2 card3"
     "footer footer footer";
     gap: 1rem;
     margin: 0;
@@ -118,10 +128,24 @@ footer {
     text-align: left;
   }
 
+  header nav {
+    margin-left: auto;
+  }
+
   nav ul {
     display: flex;
     list-style: none;
     padding-left: 0;
+    align-items: center;
+  }
+
+  body header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  header p {
+    display: block;
   }
 
 }
