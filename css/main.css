@@ -4,7 +4,7 @@ html {
   text-size-adjust: 100%;
   font-family: "Noto Sans", sans-serif;
   line-height: 1.5;
-  margin: 1.5rem;
+  margin: 1rem;
 }
 
 *,
@@ -20,16 +20,30 @@ html {
 
 h1 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
+  margin: 0;
 }
 
 i {
   font-style: normal;
 }
 
+h1 i {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 i {
+  font-size: 1.5rem;
+}
+
 body {
   display: grid;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns: 1fr;
   grid-template-areas: "header" "card1" "card2" "card3" "footer";
   gap: 1rem;
   margin: 0;
@@ -39,25 +53,36 @@ body header {
   grid-area: header;
 }
 
+header nav {
+  margin-bottom: .5rem;
+}
+
 nav ul {
   display: flex;
   list-style: none;
   justify-content: center;
   padding-left: 0;
+  margin: 0;
 }
 
 nav ul li {
   padding: .5em;
+  padding-top: 0;
 }
 
-nav ul li a{
+nav ul li a {
   color: #3783a3;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 img {
   display: block;
   width: 100%;
+}
+
+article img {
+  margin-bottom: 1.5rem;
+
 }
 
 header > p:nth-child(4) {
@@ -66,6 +91,8 @@ header > p:nth-child(4) {
   max-width: 30rem;
   text-align: center;
   margin: 0 auto;
+  margin-top: 1.5rem;
+  padding: 1rem;
 }
 
 header > p:last-child {
@@ -73,14 +100,34 @@ header > p:last-child {
   max-width: 30rem;
   text-align: center;
   margin: 0 auto;
+  margin-bottom: .5rem;
+  padding: 1.5rem;
+  padding-top: 0;
 }
 
 section {
   display: contents;
 }
 
+article {
+  margin-bottom: 1rem;
+}
+
+article p {
+  margin-bottom: 1.5rem;
+  padding-bottom: .5rem;
+}
+
 main {
   display: contents;
+}
+
+article a {
+  color: #3783a3;
+  padding: .5em 1em .6em;
+  border: .2rem solid #3783a3;
+  border-radius: .3em;
+  text-decoration: none;
 }
 
 .article1 {
@@ -98,6 +145,9 @@ main {
 footer {
   border-top: .2rem solid #e2e2e2;
   grid-area: footer;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: .75rem;
 }
 
 @media only screen and (min-width: 38em) {
@@ -117,9 +167,9 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-    "header header header"
-    "card1 card2 card3"
-    "footer footer footer";
+      "header header header"
+      "card1 card2 card3"
+      "footer footer footer";
     gap: 1rem;
     margin: 0;
   }
@@ -136,16 +186,12 @@ footer {
     display: flex;
     list-style: none;
     padding-left: 0;
-    align-items: center;
   }
 
   body header {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  header p {
-    display: block;
+    align-items: center;
   }
 
 }
