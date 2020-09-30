@@ -35,6 +35,7 @@ h1 i {
 h2 {
   font-size: 1rem;
   margin-bottom: 1.5rem;
+  margin-top: 0;
 }
 
 h2 i {
@@ -82,7 +83,6 @@ img {
 
 article img {
   margin-bottom: 1.5rem;
-
 }
 
 header > p:nth-child(4) {
@@ -146,7 +146,7 @@ footer {
   border-top: .2rem solid #e2e2e2;
   grid-area: footer;
   text-align: center;
-  padding: 1.5rem;
+  padding: 1rem;
   font-size: .75rem;
 }
 
@@ -155,6 +155,7 @@ footer {
   html {
     font-size: 110%;
     line-height: 1.4;
+    margin-top: 0;
   }
 
   h1,
@@ -164,8 +165,8 @@ footer {
 
   body {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto 1fr;
     grid-template-areas:
       "header header header"
       "card1 card2 card3"
@@ -180,6 +181,7 @@ footer {
 
   header nav {
     margin-left: auto;
+    margin-bottom: 0;
   }
 
   nav ul {
@@ -188,10 +190,32 @@ footer {
     padding-left: 0;
   }
 
+  nav ul li {
+    padding-top: .5rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
   body header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+
+  article p {
+    flex-grow: 1;
+    padding-bottom: 0;
   }
 
 }
